@@ -18,7 +18,8 @@ export class JobsListComponent implements OnInit {
   jobs: Job[] = [];
 
   ngOnInit() {
-    this.http.get(`{environment.apiUrl}/jobs`).subscribe((resp: any) => {
+    console.log(environment);
+    this.http.get(environment.apiUrl+"/job").subscribe((resp: any) => {
       this.jobs = resp;
     })
   }
